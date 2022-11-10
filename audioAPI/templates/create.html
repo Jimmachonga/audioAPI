@@ -1,0 +1,15 @@
+<form action="{{ url_for('account_actions') }}?target={{ url_for('show_index') }}" method="post"
+    enctype="multipart/form-data">
+    full name
+    <input type="text" name="fullname" required />
+    username
+    <input type="text" name="username" required />
+    email
+    <input type="text" name="email" required />
+    password
+    <input type="password" name="password" required />
+    <input type="submit" name="signup" value="sign up" />
+    <input type="hidden" name="operation" value="create" />
+</form>
+
+<a href="{{ url_for('login') }}">Have account? Log in</a>

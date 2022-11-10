@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>audioAPI Demo</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/page.js"></script>
+</head>
+
+<body>
+    <form action="{{ url_for('logout') }}" method="GET">
+        <button id="logout" type="submit">Logout</button>
+    </form>
+    <div id="forms">
+        <form id="upload" action="{{ url_for('post_audio') }}" method="POST" enctype="multipart/form-data">
+            <input id="uploadInput" type="file" name="file" />
+            <p>Drag your files here or click in this area.</p>
+            <button id="uploadbutton" type="submit">Upload</button>
+        </form>
+
+        <form class="textuploads" action="{{ url_for('info') }}" method="GET" enctype="multipart/form-data">
+            name
+            <input type="text" type="argument" name="name" />
+            <button class="textbutton" type="submit">display info</button>
+        </form>
+
+        <form class="textuploads" action="{{ url_for('list') }}" method="GET" enctype="multipart/form-data">
+            Maximum Duration
+            <input type="text" name="maxduration" />
+            Minimum Bitrate
+            <input type="text" name="minbitrate" />
+            Maximum Size
+            <input type="text" name="maxsize" />
+            <button class="textbutton" type="submit">find files</button>
+        </form>
+
+        <form class="textuploads" action="{{ url_for('download') }}" method="GET" enctype="multipart/form-data">
+            name
+            <input type="text" name="name" />
+            <button class="textbutton" type="submit">download</button>
+        </form>
+    </div>
+</body>
+
+
+</html>
